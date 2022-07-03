@@ -26,10 +26,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-//         if (file_exists(storage_path('installed'))) {
-//             $all_menus = Menu::where('is_static', INACTIVE)->with('submenus')->latest()->get();
-//             $allsettings = allsetting();
-//             view()->share(['all_menus' => $all_menus, 'allsettings' => $allsettings]);
-//         }
+        if (file_exists(storage_path('installed'))) {
+            $all_menus = Menu::where('is_static', INACTIVE)->with('submenus')->latest()->get();
+            $allsettings = allsetting();
+            view()->share(['all_menus' => $all_menus, 'allsettings' => $allsettings]);
+        }
     }
 }
